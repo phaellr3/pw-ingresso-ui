@@ -1,0 +1,32 @@
+.container-compra { display: flex;
+    align-items: stretch;
+    min-height: calc(100vh - 130px);
+}
+.main {
+    flex-grow: 30; 
+    padding: 24px;
+}
+.table-compra { 
+    width: 100%;
+    max-width: 100%;
+}
+.table-compra > tbody > tr > td { 
+    padding: 6px;
+
+    line-height: 1.42857143;
+}
+#lugares .fileira { 
+    display: flex;
+}
+.fileira-assento { 
+    padding-right: 12px;
+}
+h1, h2, h3 {
+    margin-top: 12px; 
+    margin-bottom: 12px; 
+    text-align: center;
+}
+
+h1 { font-size: 1.5em; } 
+h2 { font-size: 1.2em; }
+h3 { font-size: 1em; color: #b39ddb; }

@@ -1,0 +1,22 @@
+<div class="container-compra">
+ <div class="main">
+    <h2>Lugares</h2>
+        <table class="table-compra" id="lugares">
+         <tbody>
+            <tr class="fileira">
+                <td class="fileira-assentos">
+                    <table>
+                        <tr> 
+                            @for (item of assentos; track item.id) {
+                                <td class="fileira-assento"> 
+                                        <app-assento [valor]="item"></app-assento>
+                                </td> 
+                            }
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+         </tbody>
+        </table>
+    </div>
+</div>

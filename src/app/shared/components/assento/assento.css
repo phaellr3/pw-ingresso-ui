@@ -1,0 +1,13 @@
+figcaption {
+    text-align: center; 
+    font-size: 12px;
+}
+.assento { 
+    height: 32px; width: 32px;
+}
+.disponivel { 
+    fill: #0db6b5;
+}
+.ocupado {
+fill: #d5d5d5;
+}
