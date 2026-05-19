@@ -1,7 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { CardFilme } from "../card-filme/card-filme";
 import { Container } from "../container/container";
 import { Filme } from '../../../core/model/filme';
+import { FilmeService } from '../../../core/services/filme-service';
+
 
 @Component({
   selector: 'app-em-cartaz',
@@ -9,10 +11,21 @@ import { Filme } from '../../../core/model/filme';
   templateUrl: './em-cartaz.html',
   styleUrl: './em-cartaz.css',
 })
+
 export class EmCartaz {
   filmes: Filme[] = [
     {id: 1, nome: 'Toy Story 5', duracao: 105, genero: 'ANIMACAO', classificacao: 'LIVRE', ano: 2026, capa: 'https://ingresso-a.akamaihd.net/prd/img/movie/toy-story-5/709f36bd-9b92-49ab-8046-677758834769.webp', diretor: 'Pete Docter', elenco: 'Tom Hanks, Tim Allen, Annie Potts, Tony Hale', descricao: 'Woody e Buzz embarcam em uma nova aventura que testa os limites da amizade e da imaginação.', avaliacao: 9.2 },
     {id: 2, nome: 'The Batman: Parte II', duracao: 160, genero: 'ACAO', classificacao: 'A14', ano: 2026, capa: 'https://www.quadrorama.com.br/imagens/quadro-decorativo/?quadro=2024/08/117-1.png', diretor: 'Matt Reeves', elenco: 'Robert Pattinson, Zoë Kravitz, Jeffrey Wright, Colin Farrell', descricao: 'Batman continua sua luta para limpar Gotham enquanto enfrenta novas ameaças e dilemas morais mais sombrios que nunca.', avaliacao: 9.0 }
   ];
 
+  private filmeService = inject(FilmeService);
+
+  ngOnInit(): void {
+
+    this.filmeService.findEmCartaz().subscribe(res => this.filmes = res);
+
+  }
+
+
+  
 }
