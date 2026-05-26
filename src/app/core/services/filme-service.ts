@@ -9,7 +9,7 @@ import { Observable } from 'rxjs';
 
 export class FilmeService {
   
-  private apiUrl = 'htpp://localhost:8080/filmes';
+  private apiUrl = 'http://localhost:8080/filmes';
   private http = inject(HttpClient);
 
   findEmCartaz(): Observable<Filme[]> {
